@@ -1,7 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 
 connectDB()
 
@@ -12,4 +12,4 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/leaderboard', require('./routes/leaderboardRoutes'))
   
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(process.env.PORT || 5000);
